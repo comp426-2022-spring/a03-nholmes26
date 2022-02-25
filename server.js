@@ -54,6 +54,20 @@ app.get('/app/flips/:number', (req, res) => { // Flip a coin multiple times and 
     // send json response of results
 });
 
+app.get('/app/flip/call/heads', (req, res) => { // Flip a coin, call heads, compare result
+    // Respond with status 200
+    res.statusCode = 200;
+       // Use flipACoin function, send json response of results
+    res.json(flipACoin('heads'));
+});
+
+app.get('/app/flip/call/tails', (req, res) => { // Flip a coin, call heads, compare result
+    // Respond with status 200
+    res.statusCode = 200;
+    // Use flipACoin function, send json response of results
+    res.json(flipACoin('tails'));
+});
+
 app.use(function(req, res){
     // Default response for any other request
     res.status(404).send('404 NOT FOUND')

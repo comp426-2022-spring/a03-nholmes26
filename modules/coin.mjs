@@ -94,10 +94,11 @@
    */
   
   export function flipACoin(call) {
-    if (call == coinFlip()) {
-      return { call: call, flip: coinFlip(), result: 'win' }
+    const resultant = coinFlip();
+    if (call == resultant) {
+      return { call: call, flip: resultant, result: 'win' };
     } else {
-      return { call: call, flip: coinFlip(), result: 'lose' }
+      return { call: call, flip: resultant, result: 'lose' };
     }
   }
   
